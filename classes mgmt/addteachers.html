@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Teacher Details</title>
+    <style>
+        
+        body{
+            margin:0;
+            padding: 0;
+            background-color: rgb(228, 223, 245);
+            width: 100%;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .logintext{
+            font-size: 1.6rem;
+            margin:0;
+            font-weight: 900;
+            letter-spacing: 0.2rem;
+            word-spacing: 0.2rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(34, 25, 12);
+            text-shadow: 1px 1px 3px rgb(77, 71, 71);
+            padding: 0.3rem;
+        } 
+        .form{
+            padding: 1rem;
+            border-radius: 2rem;
+            margin:0 1rem;
+            /*box-shadow: 3px 3px 6px rgb(34, 33, 33);*/
+            background-color: rgb(69, 76, 110);
+            width: 80%;
+            text-align: center;
+        }
+        .inputs{
+            margin: 0.7rem 0rem;
+            padding: 0.5rem;
+            width: 90%;
+            letter-spacing: 2px;
+            border: 1px solid white;
+            outline: none;
+            border-radius: 0.3rem;
+            font-size: 0.8rem;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            font-size: 1rem;
+}
+        .input_flwd{
+            float: left;
+            width: 43%;
+            margin-left: 2.6rem;
+        }
+
+        .loginbtn,.reset{
+    padding: 0.5rem 2rem;
+    background-color: rgb(10, 204, 70);
+    border:0;
+    font-weight: 600;
+    outline: none;
+    color: whitesmoke;
+    border-radius: 10px;
+    margin: 0.5rem 0 0.5rem 0;
+    font-size: 1rem;
+    transition: all 1s;
+    cursor: pointer;
+}
+.reset{
+    background-color: rgb(255,0,0);
+}
+    .h1f{    color: white;    }
+    ::webkit-input-placeholder{
+            color: black;
+
+        }
+        :-ms-input-placeholder{
+            color: black;
+        }
+
+        ::-moz-placeholder{
+            color: black;
+            opacity: 1;
+        }
+        ::placeholder{
+            color: black;
+            /*opacity: 1;*/
+        }
+
+
+    @media(max-width:720px){
+            .mainName{
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 0.3rem;
+            transform: rotate(-5deg);
+            }
+
+            .inputs{
+            margin: 0.7rem 0rem;
+            padding: 0.5rem;
+            width: 94%;
+            letter-spacing: 2px;
+            border: 1px solid white;
+            outline: none;
+            border-radius: 0.3rem;
+            font-size: 0.8rem;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            font-size: 1rem;
+}
+    }
+    input[type=number]::-webkit-inner-spin-button{
+            -webkit-appearence: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <!--  <nav><div class="mainName">S.N. Classes</div>
+            <div class="statement">Your Way to manage the Classes....</div>
+        </nav> -->
+
+        <main>
+            <!-- <h2 class="logintext">Add New Teacher Details.</h2> -->
+            <br><br>
+            <form class="form formData" action="insert_teacher.php" method="POST" onsubmit=" " name="teacher_form">
+                <img src="img/teacher.png" alt="" class="us-pic" >
+                <h1 class="h1f">Enter Teacher Detail's</h1>
+                <div class="names ">
+                    <input type="text" name="tfname" pattern="[A-Za-z]{1,30}" title="Please enter valid name eg(Rahul)" placeholder="Enter Teacher First Name" class="inputs input_flwd" required autocomplete="off"/>
+                    <input type="text" name="tlname" pattern="[A-Za-z]{1,30}" title="Please enter valid name eg(Singh)" placeholder="Enter Teacher Last Name" class="inputs input_flwd" required autocomplete="off"/>
+                </div>
+                <div class="contacts">
+                    <input type="text" name="tnumber" pattern="[9876][0-9]{9}" title="Enter a valid Number" placeholder="Enter Teacher Phone Number" class="inputs input_flwd" required autocomplete="off"/>
+                    <input type="email" name="email" placeholder="Enter Teacher Email ID" class="inputs input_flwd" required autocomplete="off"/>
+                </div>
+                <div class="qualifications">
+                    <input type="text" name="tqualify" placeholder="Enter Teacher Qualification" class="inputs input_flwd" required autocomplete="off"/>
+                    <input type="text" name="texp" placeholder="Enter Teaching Experience" class="inputs input_flwd" required autocomplete="off"/>
+                </div>
+                <div class="credentials">
+                    <input type="text" name="tunm" placeholder="Enter Teacher Username" class="inputs input_flwd" required autocomplete="off"/>
+                    <input type="password" name="tpwd" placeholder="Enter Password" class="inputs input_flwd" required autocomplete="off"/>
+                </div>
+                    <button class="loginbtn">Add Details</button><br>
+                    <input class="reset" type="reset" value="Reset"/>
+                    <!-- <a class="reset" href="teacher_details.php">details panel</a> -->
+            </form>
+            <br>
+         </main>
+    </header>
+  <!--   <script>
+        const btn=document.querySelector(".loginbtn");
+        btn.addEventListener("click",()=>{
+            window.location.href="createStudent.html";
+        })
+    </script> -->
+</body>
+</html>

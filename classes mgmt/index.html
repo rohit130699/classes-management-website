@@ -1,0 +1,533 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>S.N. Classes</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+         input{
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+           body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    text-align: center;
+}
+textarea{
+    resize: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+            #topbar{
+                background-color: white;
+                height: 77px;
+                box-sizing: border-box;
+                z-index: 1;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                background-color: white;
+                box-shadow: 2px 2px 2px grey;
+            }
+            .menus{
+                position: relative;
+                padding-top: 10px;
+                font-weight: 600;
+                font-size: 17px;
+                color: black;
+                display: inline-block;
+                margin-right: 20px;
+                transform: translateY(-8px);
+                cursor: pointer;
+            }
+            #drop{
+                width: 130px;
+                border-top: 2px solid rgb(170, 210, 54);
+                padding: 20px;
+                position: absolute;
+                right: 2px;
+                background-color: white;
+                box-shadow: 0 2px 5px #ccc;
+                display: none;
+            }
+            #drop a{
+                display: block;
+                border-bottom: 1px solid gray;
+                text-align: left;
+                padding: 4px 0;
+                font-weight:300;
+                font-size: 16px;
+            }
+            #drop span:last-of-type{
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+            #dropdown:hover #drop{
+                display: block;
+            }
+            #logo{
+                margin-left: 30px;
+                width: 60px;
+                height: 55px;
+            }
+            #logotitle{
+                text-align: left;
+
+            }
+            .menus:last-of-type{
+                margin-right: 50px;
+            }
+            .menus span{
+                margin-right: 5px;
+            }
+            .green-button{
+                font-size:17px;
+                font-weight: 600;
+                color: white;
+                background-color: rgb(10, 204, 70);
+                padding: 9px 34px;
+                border-radius: 4px;
+                border:0;
+                outline: none;
+                cursor: pointer;
+            }
+            .green-button1{
+                font-size:17px;
+                font-weight: 600;
+                color: white;
+                background-color: rgb(10, 204, 70);
+                padding: 9px 34px;
+                border-radius: 4px;
+                border:0;
+                outline: none;
+                cursor: pointer;
+            }
+            .blue-button{
+                font-size: 17px;
+                font-weight: 600;
+                color: white;
+                background-color: rgb(102, 16, 242);
+                padding: 9px 34px;
+                border-radius: 4px;
+                border:0;
+                outline: none;
+                cursor: pointer;
+            }
+            header{
+                width: 100%;
+                height: 100vh;
+                background-image: url('https://cdn.pixabay.com/photo/2016/01/19/17/53/writing-1149962_960_720.jpg');
+                background-position: left;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            #section-one{
+                font-family: 'Poppins', sans-serif;
+                height: 100hv;
+                width: 100%;
+            }
+            #section-one div{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #section-one div h1{
+                font-size: 44px;
+                width: 100%;
+                max-width: 1100px;
+                font-weight: 600;
+                letter-spacing: 8.8px;
+                line-height: 1.2;
+                background-image:linear-gradient(to right,rgba(235, 223, 223, 0.8),rgb(192, 173, 173,0.8));
+                color: rgb(78, 65, 41);
+            }
+            #section-one div p{
+                width: 100%;
+                max-width: 1100px;
+                font-size: 16px;
+                font-weight: 900;
+                letter-spacing: 0.5px;
+                font-weight: 400;
+                color: #272218;
+                background-image:linear-gradient(to right,rgba(235, 223, 223, 0.8),rgb(192, 173, 173,0.8));
+
+            }
+            #section-two{
+                width: 100%;
+                height: 100hv;
+                display:grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                font-family:'Poppins', sans-serif;
+                color:white;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            #step-one{
+                background-color: #5acda6;
+            }
+            #step-two{
+                background-color: #91ac41;
+            }
+            #step-three{
+                background-color: #e4b476;
+            }
+            #step-four{
+                background-color: #f69dad;
+            }
+            #section-two div{
+                padding-top: 50px;
+                box-sizing: border-box;
+                padding-bottom: 50px;
+            }
+            #section-two div .icons-img{
+                height: 80px;
+                transition: all 0.3s;
+            }
+            #section-two div h2{
+                font-weight: 600;
+                font-size: 24px;
+            }
+            #section-two div p{
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                line-height: 1.6;
+                padding-right: 50px;
+                padding-left: 50px;
+            }
+            #section-two div:hover .icons-img{
+                transform: scale(1.1, 1.1);
+            }
+            #section-three{
+                width: 100%;
+                height: 450hv;
+                margin: 0;
+                background-color: #f7eee2;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            #section-three>div>p:first-of-type{
+                color: #91ac41;
+                font-size: 24px;
+                font-family: 'Caveat', cursive;
+                margin: 0;
+                margin-top: 35px;
+            }
+            #section-three>div>p:last-of-type{
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                color: #8b8b99;
+                letter-spacing: 0.5px;
+            }
+            #section-three div h2{
+                font-family: 'Poppins', sans-serif;
+                font-size: 44px;
+                font-weight: 600;
+            }
+            #social{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                margin-top: 50px;
+              align-content: center;
+              align-items: center;
+            }
+            #social div{
+                height: 50vh;
+            }
+            #social div .icons{
+                display: inline-block;
+                width: 140px;
+                height: 140px;
+                background-color: #e3b375;
+                border-radius: 50%;
+                transition: all 0.3s;
+            }
+            #social div .icons-img{
+                display: inline-block;
+                color: white;
+                transform: translateY(40px);
+                font-size: 60px;
+            }
+            #social div:hover .icons{
+                transform: scale(1.1,1.1);
+            }
+            #social div h2{
+                font-family: 'Poppins', sans-serif;
+                font-size: 24px;
+                font-weight: 600;
+                width: 100%;
+                margin-bottom: 0;
+                max-width: 1000px;
+            }
+            #social div p{
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                letter-spacing: 0.5px;
+                font-weight: 500;
+                color: #8b8b99;
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+            #section-eight{
+                padding-top: 5px;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                text-align: left;
+            }
+            #section-eight>div:first-of-type,#section-eight>div:last-of-type{
+                padding: 5rem;
+                box-sizing: border-box;
+            }
+            #section-eight div p{
+                color: #91ac41;
+                font-size: 24px;
+                font-family: 'Caveat', cursive;
+                margin: 0;
+                margin-top: 0px;
+                padding: 0;
+            }
+            #section-eight div h1{
+                font-family: 'Poppins', sans-serif;
+                font-size: 44px;
+                font-weight: 600;
+                margin: 0;
+                width: 100%;
+            }
+            #section-eight div h3,pre{
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                color: #8b8b99;
+                letter-spacing: 0.5px;
+            }
+            #section-eight div .email{
+                margin:0;
+                font-size: 1.2rem;
+            }
+            .form-input{
+                width: 100%;
+                border:0.5px solid lightgray;
+                border-radius: 4px;
+                background-color: white;
+                color: #8b8b99;
+                padding: 10px 0 10px 10px;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                background-color: white;
+                color: #8b8b99;
+                outline: none;
+            }
+            #submit-button{
+                font-size: 16px;
+                padding: 15px 30px 15px 30px;
+                float: left;
+            }
+            footer{
+                background-color:#232323;
+                color: white;
+                font-size: 14px;
+                padding: 30px 0 30px 0;
+                letter-spacing: 0.5px;
+            }
+            #contact-form div{
+                text-align: center;
+                margin: 0 5px;
+            }
+            @media(max-width: 720px){
+                    #topbar{
+                    height: 70px;
+                    width: 100%;
+                    }
+                    .green-button1{
+                        display: none;
+                    }
+                    .menu1{
+                        display: none;
+                    }
+                    .menus:last-of-type{
+                        margin-right: 5px;
+                    }
+                    #logo{
+                        margin-left: 10px;
+                    }
+                     #section-one div h1{
+                        font-size: 28px;
+                    }
+                     #section-one div p{
+                        padding: 16px;
+                        box-sizing: border-box;
+                    }
+                     #section-two{
+                         display: grid;
+                         grid-template-columns: auto;
+                    }
+                     #section-three div{
+                         text-align: center;
+                         display: grid;
+                         grid-template-columns: auto;
+
+                    }
+                     #social div .icons{
+                         margin-right: auto;
+                         margin-left: auto;
+                    }
+                    #section-eight{
+                        padding-top: 60px;
+                        padding-bottom: 60px;
+                        display: grid;
+                        grid-template-columns:auto;
+                        text-align: left;
+                    }
+                }
+
+                .h1{
+                     color: #FF0000;
+                     font-size: 30px;
+                }
+
+    </style>
+</head>
+<body>
+    <header id="head">
+        <nav id="topbar">
+            <a href=""><img src="img/snclass.png" alt="LOGO" id="logo"/></a>
+            <!-- <div class="h1"><h1>S.N. Classes</h1></div> -->
+            <div id="menu-container">
+        
+                <div class="menus menu1" id="dropdown">
+                    <span>Menu</span><i class="fas fa-caret-down"></i>
+                    <div id="drop">
+                        <a href="#section-two"><span>Basic Functions</span></a>
+                        <a href="#section-three"><span>Our Facilities</span></a>
+                        <a href="#section-eight"><span>Contact Us</span></a>
+                    </div>
+                </div>
+                <div class="menus"><a href="#section-eight"><button class="green-button1">Contact Us</button></a></div>
+                <div class="menus"><a href="login.html"><button class="blue-button">Teacher's Zone</button></a></div>
+            </div>
+        </nav>
+        <main>
+        <section id="section-one">
+            <div>
+                <h1 id="section-one-head">WELCOME TO S.N. Classes</h1>
+                <!-- <p class="desc">With the high quality mentorship and a good infrastructure students will find studying here as an opportunity. With the daily lectures and weekly mock test students will cultivate an habit of learning by building the great mindset to tackle the future challenges.</p> -->
+            </div>
+        </section>
+        <section id="section-two">
+            <div id="step-one">
+                    <img class="icons-img" src="https://img.icons8.com/dusk/64/000000/school-director.png"/>
+                    <h2>Step 01.</h2>
+                    <p>Highly Qualified Mentors for the betterment of the students to gain a conceptual knowledge about the curriculum.</p>
+            </div>
+            <div id="step-two">
+                    <img class="icons-img" src="https://img.icons8.com/nolan/64/building.png"/>
+                    <h2>Step 02.</h2>
+                    <p>Good infrastructure to keep the environment of the class suitable for the focussed learning.</p>
+            </div>
+            <div id="step-three">
+                <img class="icons-img" src="https://img.icons8.com/nolan/64/love-book.png"/>
+                    <h2>Step 03.</h2>
+                    <p>We also provide the homeworks and the study material for the revision purpose.</p>
+            </div>
+            <div id="step-four">
+                <img class="icons-img" src="https://img.icons8.com/doodle/96/000000/question-mark--v1.png"/>
+                    <h2>Step 04.</h2>
+                    <p>The queries of the student regarding the curriculum are always welcomed.</p>
+            </div>
+        </section>
+        <section id="section-three">
+            <div>
+                <p>Methodological Learning</p>
+                <h2>Why to Choose S.N. CLASS ?</h2>
+                <p>Knowledge gained will bring to you a better opportunity.</p>
+                <div id="social">
+                <div>
+                    <div class="icons"><img class="icons-img" src="https://img.icons8.com/nolan/64/structural.png"/></div>
+                    <h2>Full Academic Support</h2>
+                    <p>We also provide support outside the classes through regular problem solving, Individual counselling, Seminars and etc.</p>
+                </div>
+                <div>
+                    <div class="icons"><img class="icons-img" src="https://img.icons8.com/dusk/64/000000/teacher.png"/></div>
+                    <h2>Best Teacher's Support</h2>
+                    <p>Interactive classes with scientific and result oriented teaching Methodology.</p>
+                </div>
+                <div>
+                    <div class="icons"><img class="icons-img" src="https://img.icons8.com/nolan/64/saving-book.png"/></div>
+                    <h2>Best Study Material</h2>
+                    <p>We provide best study Material from created as per syllabus & easy to learn. </p>
+                </div>
+                <div>
+                    <div class="icons"><img class="icons-img" src="https://img.icons8.com/nolan/64/warranty-card.png"/></div>
+                    <h2>Qualified Mentors</h2>
+                    <p>Highly Qualified Mentors will help you to cultivate strong base of knowledge.</p>
+                </div>   
+                </div>  
+            </div>
+        </section>
+        <section id="section-eight">
+            <div>
+                <p>Contact Us</p>
+                <h1>Address Information</h1>
+                <h3>Knowledge is not a power but the application of knowledge is power.</h3>
+                <h2>Nallasopara Branch</h2>
+                <pre>
+S.N. Coaching Classes,
+Near Nav Jeevan Vidya Mandir School,
+90 feet road, Ostwal Nagari,
+Nallasopara(East) 401209.
+                </pre>
+                <h2>Get in touch.</h2>
+                <p class="email">Email : <a href="mailto:shyamgupta7028@gmail.com">shyamgupta7028@gmail.com</a></p>
+                <p class="email">Talk to us : <a href="tel:+919011660075">+91-9011660075</a>/
+                <a href="tel:+918793853204">+91-8793853204</a></p>
+            </div>
+            <div>
+                <p>Meet Our Team</p>
+                <h1>Get In Touch</h1>
+                <h3>Shoot your queries here.</h3>
+                <form id="contact-form">
+                    <div><input class="form-input name" type="text" pattern="[A-Za-z]{1,100}" placeholder="Name" required title="Enter Correct Name" autocomplete="off"/></div>
+                    <div><input class="form-input phone" type="text" pattern="[987][0-9]{9}" placeholder="Phone" required title="Enter Correct Phone Number" autocomplete="off"/></div>
+                    <div><input class="form-input email-form" type="email" placeholder="E-mail" autocomplete="off"/></div>
+                    <div><textarea class="form-input message" placeholder="Message (Enter message of atleast 30 character long)" required autocomplete="off"></textarea></div>
+                    <div class="error-msg"></div>
+                    <div><button class="green-button" id="submit-button">Submit Now</button></div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+            <span>&copy; Copyright 2020 S.N. Classes - All Rights Reserved</span>
+     </footer>
+</header>
+<script type="text/javascript">
+const name=document.querySelector(".name");
+const phone=document.querySelector(".phone");
+const email=document.querySelector(".email");
+const msg=document.querySelector(".message");
+const errorMsg=document.querySelector(".error-msg");
+const button=document.querySelector("#submit-button")
+button.addEventListener("click",()=>{
+    if(name.value!==''||phone.value!==''||msg.value!==''){
+        errorMsg.innerText="";
+        alert("Submited")
+        window.location.reload();
+    }
+    else{
+        errorMsg.innerText="Please Provide all the details";
+    }
+})
+</script>
+</body>
+</html>

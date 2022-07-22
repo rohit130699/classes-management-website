@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+            background-color: rgb(228, 223, 245);
+            width: 100%;
+        }
+        nav{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            box-shadow: 2px 2px 2px rgb(51, 51, 51);
+            background-color: rgb(240, 238, 231);
+            box-sizing: border-box;
+        }
+         header{
+            width: 100%;
+        }
+        nav>a{
+            text-decoration: none;
+        }
+        /*.mainName{
+            font-size: 1.3rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-right:20px;
+            padding: 0.5rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(169, 90, 243);
+            border-radius: 10px;
+            transform: rotate(-8deg);
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            color: rgb(231, 213, 213);
+        }*/
+        #logo{
+                margin-left: 30px;
+                width: 60px;
+                height: 55px;
+
+            }
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        .form{
+
+            width: 25%;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin:0 2rem;
+            /*box-shadow: 3px 3px 6px rgb(51, 51, 51);*/
+            background-color: rgb(69, 76, 110);
+        }
+        .formData{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .inputs{
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        width: 80%;
+        letter-spacing: 2px;
+        border: 1px solid rgb(255,255,255);
+        outline: none;
+        border-radius: 0.3rem;
+        font-size: 1rem;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+}
+#l2{
+
+        font-size: 1rem;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+}
+.loginbtn,.reset{
+    padding: 0.5rem 2rem;
+    background-color: rgb(10, 204, 70);
+    border:0;
+    font-weight: 600;
+    outline: none;
+    color: whitesmoke;
+    border-radius: 10px;
+    margin: 0.5rem 0.8rem 0;
+    font-size: 1rem;
+    transition: all 1s;
+    cursor: pointer;
+}
+.reset{
+    background-color: rgb(255, 0, 0);
+}
+
+
+.toggle-div{
+                display: flex;
+                margin-bottom: 0.1rem;
+                overflow: hidden;
+            }
+            .toggle-div input{
+                position: absolute;
+                height: 1px;
+                width: 1px;
+                border: none;
+                overflow: hidden;
+            }
+            .toggle-div label{
+                background-color: rgb(226, 209, 209);
+                color: black;
+                font-size: 1.1rem;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-weight: 900;
+                text-align: center;
+                padding: 5px 10px;
+                transition: all 0.2s ease-in-out;
+            }
+            .toggle-div label:hover{
+                cursor: pointer;
+            }
+            .toggle-div input:checked + label{
+                background-color: rgb(51, 51, 51);
+                color: cornsilk;
+            }
+            .toggle-div label:first-of-type{
+                border-radius: 6px 0 0 6px;
+            }
+            .toggle-div label:last-of-type{
+                border-radius:0 6px 6px 0;
+            }
+        @media(max-width:720px){
+            .mainName{
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 0.3rem;
+            transform: rotate(-5deg);
+        }
+
+        .form{
+
+            width: 80%;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin:0 2rem;
+            /*box-shadow: 3px 3px 6px rgb(51, 51, 51);*/
+            background-color: rgb(69, 76, 110);
+        }
+
+        }
+        .h1f{
+            color: white;
+        }
+
+        ::webkit-input-placeholder{
+            color: black;
+
+        }
+        :-ms-input-placeholder{
+            color: black;
+        }
+
+        ::-moz-placeholder{
+            color: black;
+            opacity: 1;
+        }
+        ::placeholder{
+            color: black;
+            /*opacity: 1;*/
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+       <!--  <nav>
+            <!-- <a href="index.html"><div class="mainName">S.N. Classes</div></a> -->
+            <!-- <a href=""><img src="snclass.png" alt="LOGO" id="logo"/></a> -->
+            <!-- <div class="statement">Your Way to manage the Classes....</div> -->
+        </nav> 
+        <main>
+            <!-- <h2 class="logintext">Please Login First.</h2> -->
+
+            <br>
+            <br>
+            <form class="form formData" name="f1" action = "login.php" method="post" >
+                <img src="img/admin.png" alt="" class="us-pic" height="128px" width="135px">
+                <h1 class="h1f">Enter Login Information</h1>
+             <input type="text" name="uname" placeholder="Enter UserName" class="inputs username" required autocomplete="off"/>
+
+             <input type="password" name="pass" placeholder="Enter Password" class="inputs password" required autocomplete="off"/>
+             <label class="inputs " id="l2">Select Your Role</label><br>
+             <div class="toggle-div">
+                 <input type="radio" id="teacher" name="user" value="teacher" checked/>
+                 <label for="teacher">Login as Teacher</label>
+                 <input type="radio"id="admin" name="user" value="admin"/>
+                 <label for="admin">Login as Admin</label>
+             </div>
+             <h3 class="error"></h3>
+             <button class="loginbtn">Continue to Login</button>
+             <input class="loginbtn reset" type="reset" value="Reset"/>
+            </form>
+            <br>
+         </main>
+        </header>
+        <script>
+            const btn=document.querySelector(".loginbtn");
+            btn.addEventListener("click",()=>{
+                window.location.href="createTeacher.html";
+            })
+        </script>
+</body>
+</html>

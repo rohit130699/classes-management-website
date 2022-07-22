@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees Deposits</title>
+	<link rel="stylesheet" type="text/css" href="js/jquery-ui.min.css">
+    <style>
+       body{
+            margin:0;
+            padding: 0;
+            background-color: rgb(228, 223, 245);
+            width: 100%;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+         .logintext{
+            color: white;
+         }
+           .form{
+            padding: 1rem;
+            border-radius: 1rem;
+            margin:0 2rem;
+            box-shadow: 3px 3px 6px rgb(34, 33, 33);
+            background-color: rgb(69, 76, 110);
+        }
+
+        .inputs{
+            margin: 1rem 0;
+            padding: 0.5rem;
+            width: 100%;
+            letter-spacing: 2px;
+            border: 1px solid white;
+            outline: none;
+            border-radius: 0.3rem;
+            font-size: 1rem;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+
+        .input_flwd{
+            float: left;
+            width: 43%;
+            margin-left: 2.6rem;
+        }
+
+        .loginbtn,.reset{
+            padding: 0.5rem 2rem;
+            background-color: rgb(10, 204, 70);
+            border:0;
+            font-weight: 600;
+            outline: none;
+            color: whitesmoke;
+            border-radius: 10px;
+            margin: 0.5rem 0.8rem 0;
+            font-size: 1rem;
+            transition: all 1s;
+            cursor: pointer;
+        }
+        .reset{
+            background-color: rgb(255, 0, 0);
+        }
+
+         .toggle-div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            .toggle-div input{
+                position: absolute;
+                height: 1px;
+                width: 1px;
+                border: none;
+                overflow: hidden;
+            }
+            .toggle-div label{
+                background-color: rgb(226, 209, 209);
+                color: black;
+                font-size: 1.1rem;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-weight: 900;
+                text-align: center;
+                padding: 5px 10px;
+                transition: all 0.2s ease-in-out;
+            }
+            .toggle-div label:hover{
+                cursor: pointer;
+            }
+            .toggle-div input:checked + label{
+                background-color: rgb(51, 51, 51);
+                color: cornsilk;
+            }
+            .toggle-div label:first-of-type{
+                border-radius: 6px 0 0 6px;
+            }
+            .toggle-div label:last-of-type{
+                border-radius:0 6px 6px 0;
+            }
+
+            .select{
+                width: 44%;
+            }
+            .sel2{
+                margin-left: 45px;
+            }
+            .add{
+                width: 90.5%;
+                margin-right: 35px;
+            }
+
+            ::webkit-input-placeholder{
+            color: black;
+
+        }
+        :-ms-input-placeholder{
+            color: black;
+        }
+
+        ::-moz-placeholder{
+            color: black;
+            opacity: 1;
+        }
+        ::placeholder{
+            color: black;
+            /*opacity: 1;*/
+        }
+
+        input[type=number]::-webkit-inner-spin-button{
+            -webkit-appearence: none;
+            display: none;
+        }
+        .val{
+            color: black;
+        }
+        .fees{
+            width: 40%;
+            
+        }
+        .lbl{
+            width: 5%;
+        }
+        .lbl2{
+            width: 10%;
+            margin-top: 17px;
+            margin-left: 15px; 
+        }
+        .radval{
+
+        }
+
+        @media(max-width:720px){
+            .mainName{
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 0.3rem;
+            transform: rotate(-5deg);
+            }
+
+            .inputs{
+            margin: 0.5rem 0rem;
+            padding: 0.5rem;
+            width: 94%;
+            letter-spacing: 2px;
+            border: 1px solid white;
+            outline: none;
+            border-radius: 0.3rem;
+            font-size: 0.8rem;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            font-size: 1rem;
+            }
+
+            .lbl{
+            width: 25%;
+            }
+            .lbl2{
+            width: 50%;
+            margin-top: 15px;
+            margin-left: 15px; 
+            }
+
+            .select{
+                width: 99.9%;
+
+            }
+            .sel2{
+                margin-left: 10px;
+            }
+    }
+
+
+    </style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script>
+function fun(str){
+if(str.length == 0){
+		document.getElementById("std").value="";
+		document.getElementById("fname").value="";
+		document.getElementById("lname").value="";
+		return;
+	}
+else{
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var myObj = JSON.parse(this.responseText);
+			document.getElementById("std").value = myObj.std;
+			document.getElementById("fname").value = myObj.fname;
+			document.getElementById("lname").value = myObj.lname;
+		}
+	};
+	xmlhttp.open("GET", "demo.php?sid=" + str, true);
+	xmlhttp.send();
+}}
+</script>
+</head>
+<body>
+
+    <header>
+    
+        <main>
+           <br><br>
+            <form class="form formData" name="f1" action = "feesdata.php" method="post">
+                <img src="img/tax.png" alt="" class="us-pic" height="130px" width="135px">
+                <h1 class="logintext">Enter Student Details to Get Fees Record</h1>
+				<div class="ids">
+                    <input type="text" onkeyup="fun(this.value)" name="stu_id" title="Please enter valid id(only numbers)" placeholder="Enter Student ID" class="inputs input_flwd" required/>                   
+                </div>
+                <div class="names">
+                    <input type="text" name="fname" id="fname" pattern="[A-Za-z]{1,30}" title="Please enter valid name eg(Rahul)" placeholder="Enter Student First Name" class="inputs input_flwd" readonly/>
+                    <input type="text" name="lname" id="lname" pattern="[A-Za-z]{1,30}" title="Please enter valid name eg(Singh)" placeholder="Enter Student Last Name" class="inputs input_flwd" readonly/>
+                </div>
+                <div class="academics">
+					<input type="text" name="std" id="std" title="Please enter valid name eg(Singh)" placeholder="Enter Student Last Name" class="inputs input_flwd" readonly/>
+                </div>
+
+                    <button class="loginbtn">Search Fees Records</button><br>
+                    <input class="loginbtn reset" type="reset" value="Reset"/>
+            </form>
+            <br>
+         </main>
+    </header>
+</body>
+</html>
